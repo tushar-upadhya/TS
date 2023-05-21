@@ -5,7 +5,7 @@
 // }
 // console.log("cal:", cal(num1, 5));
 
-// ==========================================
+// ==========================================================
 
 // function getTotal(number: number[]) {
 //     return number.reduce((acc, item) => {
@@ -14,7 +14,7 @@
 // }
 // console.log("getTotal:", getTotal([3, 1, 2]));
 
-// ==========================================
+// ==========================================================
 
 // const user = {
 //     fistName: "john",
@@ -24,9 +24,9 @@
 
 // console.log("user:", user);
 
-// ==========================================
+// ==========================================================
 
-//? TYPE ALIAS =================================
+//? TYPE ALIAS ==========================================================
 
 // type User = {
 //     name: string;
@@ -45,9 +45,9 @@
 // }
 // console.log("login:", login({ name: "jo", age: 2 }));
 
-// ==================================================
+// ==========================================================
 
-//? INTERFACE =======================================
+//? INTERFACE ==========================================================
 
 // interface Transaction {
 //     payerAccountNumber: number;
@@ -88,17 +88,17 @@
 // }
 
 // interface Ebook extends Book {
-//     // name: string;
-//     // price: number;
+// name: string;
+// price: number;
 //     fileSize: number;
 //     format: string;
 // }
 
 // interface AudioBook extends Ebook {
-//     // name: string;
-//     // price: number;
-//     // fileSize: number;
-//     // format: string;
+// name: string;
+// price: number;
+// fileSize: number;
+// format: string;
 //     duration: number;
 // }
 
@@ -135,9 +135,9 @@
 //     size: 200,
 // };
 
-// ======================================================
+// ==========================================================
 
-// ======================================================
+// ==========================================================
 //! TYPE vs INTERFACE
 
 // type Book = {
@@ -148,6 +148,8 @@
 // type Book = {
 //     size: number;
 // };
+
+// todo -> WE CAN MERGE TWO INTERFACE
 
 //todo -> duplicate identifier
 
@@ -160,9 +162,9 @@
 //     size: number;
 // }
 
-// =======================================================
+// ==========================================================
 
-//? UNIONS =======================================
+//? UNIONS =========================================================
 
 // type ID = number | string;
 
@@ -181,6 +183,62 @@
 // }
 // console.log("getFirstThree:", getFirstThree([1, 2, 3, 4, 5, 6]));
 
-// ================================================================
+// ==========================================================
 
-//? GENERICS ======================================================
+//? GENERICS ==========================================================
+
+// function logString(args: string) {
+//     console.log("args:", args);
+//     return args;
+// }
+
+// function logNumber(args: number) {
+//     console.log("args:", args);
+//     return args;
+// }
+
+// function logArray<T>(args: T): T {
+//     console.log("args:", args);
+//     return args;
+// }
+// logString("hello");
+
+// logNumber(2);
+
+// logArray([5, "s", { name: "tushar" }]);
+
+// ===<
+
+// interface HasAge {
+//     age: number;
+// }
+
+// function getOld<T extends HasAge>(people: T[]): T {
+//     return people.sort((a, b) => a.age - b.age)[0];
+// }
+
+// const people: HasAge[] = [{ age: 30 }, { age: 5 }, { age: 2 }];
+
+// interface Player {
+//     name: string;
+//     age: number;
+// }
+
+// const player: Player[] = [
+//     { name: "a", age: 20 },
+//     { name: "b", age: 10 },
+//     { name: "c", age: 5 },
+// ];
+
+// getOld(people).age;
+
+// const person = getOld(player);
+
+// console.log(person.name);
+// person.age;
+
+// ==========================================================
+
+//? DUCK TYPING / STRUCTURAL TYING =========================================================
+
+function login(credentials);
