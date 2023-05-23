@@ -241,4 +241,4 @@
 
 //? DUCK TYPING / STRUCTURAL TYING =========================================================
 
-function login(credentials);
+// function login(credentials);
