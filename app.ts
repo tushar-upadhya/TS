@@ -240,5 +240,40 @@
 // ==========================================================
 
 //? DUCK TYPING / STRUCTURAL TYING =========================================================
+// interface ICredential {
+//     username: string;
+//     password: string;
+//     isAdmin?: boolean;
+// }
 
-// function login(credentials);
+// function login(credential: ICredential) {
+//     console.log("credential:", credential);
+//     return true;
+// }
+
+// const user = {
+//     username: "tushar",
+//     password: "password",
+//     isAdmin: true,
+// };
+
+// login(user);
+
+// interface IAuth {
+//     username: string;
+//     password: string;
+//     login(username: string, password: string): void;
+// }
+
+// const auth: IAuth = {
+//     username: "a",
+//     password: "p",
+//     login(username: string, password: string) {
+//         return true;
+//     },
+// };
+
+//? INFERENCE=============================
+
+// let num = 1;
+// let num = "1";
