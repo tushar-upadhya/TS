@@ -1,5 +1,3 @@
-import "./style.css";
-
 import { useRef } from "react";
 
 interface Props {
