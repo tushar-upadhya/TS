@@ -1,11 +1,11 @@
+import { useState } from "react";
+
 import { ITodo } from "./model";
 
 import "./style.css";
 
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import { MdDone } from "react-icons/md";
-
-import { useState, useRef } from "react";
 
 type Props = {
     todo: ITodo;
@@ -40,8 +40,6 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
         );
         setEdit(false);
     };
-
-    const inputRef = useRef(null);
 
     return (
         <form className="todos_single" onSubmit={(e) => handleEdit(e, todo.id)}>
