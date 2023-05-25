@@ -12,6 +12,79 @@ const head = (
     />
 );
 
+const body = (
+    <div
+        style={{
+            width: "10px",
+            height: "100px",
+            background: "black",
+            position: "absolute",
+            top: "120px",
+            right: 0,
+        }}
+    />
+);
+
+const rightArm = (
+    <div
+        style={{
+            width: "100px",
+            height: "10px",
+            background: "black",
+            position: "absolute",
+            top: "150px",
+            right: "-100px",
+            rotate: "-30deg",
+            transformOrigin: "left bottom",
+        }}
+    />
+);
+
+const leftArm = (
+    <div
+        style={{
+            width: "100px",
+            height: "10px",
+            background: "black",
+            position: "absolute",
+            top: "150px",
+            right: "10px",
+            rotate: "30deg",
+            transformOrigin: "right bottom",
+        }}
+    />
+);
+
+const rightLeg = (
+    <div
+        style={{
+            width: "100px",
+            height: "10px",
+            background: "black",
+            position: "absolute",
+            top: "210px",
+            right: "-90px",
+            rotate: "60deg",
+            transformOrigin: "left bottom",
+        }}
+    />
+);
+
+const leftLeg = (
+    <div
+        style={{
+            width: "100px",
+            height: "10px",
+            background: "black",
+            position: "absolute",
+            top: "210px",
+            right: 0,
+            rotate: "-60deg",
+            transformOrigin: "right bottom",
+        }}
+    />
+);
+
 const Drawing = () => {
     return (
         <div
@@ -20,6 +93,11 @@ const Drawing = () => {
             }}
         >
             {head}
+            {body}
+            {rightArm}
+            {leftArm}
+            {rightLeg}
+            {leftLeg}
             <div
                 style={{
                     height: "50px",
