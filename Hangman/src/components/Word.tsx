@@ -1,7 +1,9 @@
-const Word = () => {
-    const word = "test";
-    const guessedLetter = ["t", "e"];
+interface IWordProps {
+    guessedLetter: string[];
+    wordToGuess: string;
+}
 
+const Word = ({ guessedLetter, wordToGuess }: IWordProps) => {
     return (
         <div
             style={{
@@ -13,7 +15,7 @@ const Word = () => {
                 fontFamily: "monospace",
             }}
         >
-            {word.split("").map((letter, index) => (
+            {wordToGuess.split("").map((letter, index) => (
                 <span style={{ borderBottom: ".1rem solid black" }} key={index}>
                     <span
                         style={{
@@ -31,5 +33,3 @@ const Word = () => {
 };
 
 export default Word;
-
-//! 20
