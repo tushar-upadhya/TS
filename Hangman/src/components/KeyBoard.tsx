@@ -1,3 +1,5 @@
+import styles from "./keyBoard.module.css";
+
 const KEYS = [
     "a",
     "b",
@@ -26,3 +28,25 @@ const KEYS = [
     "y",
     "z",
 ];
+
+const KeyBoard = () => {
+    return (
+        <div
+            style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit,minmax(75px, 1fr))",
+                gap: ".5rem",
+            }}
+        >
+            {KEYS.map((key) => {
+                return (
+                    <button className={styles.btn} key={key}>
+                        {key}
+                    </button>
+                );
+            })}
+        </div>
+    );
+};
+
+export default KeyBoard;

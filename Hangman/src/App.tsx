@@ -4,7 +4,7 @@ import words from "./components/wordList.json";
 
 import Drawing from "./components/Drawing";
 import Word from "./components/Word";
-// import KeyBoard from "./components/KeyBoard";
+import KeyBoard from "./components/KeyBoard";
 
 function App() {
     const [wordToGuess, setWordToGuess] = useState(() => {
@@ -29,8 +29,15 @@ function App() {
             </div>
 
             <Drawing />
+
             <Word />
-            {/* <KeyBoard /> */}
+            <div
+                style={{
+                    alignSelf: "stretch",
+                }}
+            >
+                <KeyBoard />
+            </div>
         </div>
     );
 }
