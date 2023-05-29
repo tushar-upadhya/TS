@@ -1,14 +1,19 @@
-interface IWordProps {
-    guessedLetter: string[];
+type WordProps = {
+    guessedLetters: string[];
     wordToGuess: string;
-}
+    reveal?: boolean;
+};
 
-const Word = ({ guessedLetter, wordToGuess }: IWordProps) => {
+export function Word({
+    guessedLetters,
+    wordToGuess,
+    reveal = false,
+}: WordProps) {
     return (
         <div
             style={{
                 display: "flex",
-                gap: ".25rem",
+                gap: ".25em",
                 fontSize: "6rem",
                 fontWeight: "bold",
                 textTransform: "uppercase",
@@ -16,12 +21,17 @@ const Word = ({ guessedLetter, wordToGuess }: IWordProps) => {
             }}
         >
             {wordToGuess.split("").map((letter, index) => (
-                <span style={{ borderBottom: ".1rem solid black" }} key={index}>
+                <span style={{ borderBottom: ".1em solid black" }} key={index}>
                     <span
                         style={{
-                            visibility: guessedLetter.includes(letter)
-                                ? "visible"
-                                : "hidden",
+                            visibility:
+                                guessedLetters.includes(letter) || reveal
+                                    ? "visible"
+                                    : "hidden",
+                            color:
+                                !guessedLetters.includes(letter) && reveal
+                                    ? "red"
+                                    : "black",
                         }}
                     >
                         {letter}
@@ -30,6 +40,4 @@ const Word = ({ guessedLetter, wordToGuess }: IWordProps) => {
             ))}
         </div>
     );
-};
-
-export default Word;
+}

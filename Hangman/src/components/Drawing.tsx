@@ -1,4 +1,4 @@
-const head = (
+const HEAD = (
     <div
         style={{
             width: "50px",
@@ -12,7 +12,7 @@ const head = (
     />
 );
 
-const body = (
+const BODY = (
     <div
         style={{
             width: "10px",
@@ -25,7 +25,7 @@ const body = (
     />
 );
 
-const rightArm = (
+const RIGHT_ARM = (
     <div
         style={{
             width: "100px",
@@ -40,7 +40,7 @@ const rightArm = (
     />
 );
 
-const leftArm = (
+const LEFT_ARM = (
     <div
         style={{
             width: "100px",
@@ -55,7 +55,7 @@ const leftArm = (
     />
 );
 
-const rightLeg = (
+const RIGHT_LEG = (
     <div
         style={{
             width: "100px",
@@ -70,7 +70,7 @@ const rightLeg = (
     />
 );
 
-const leftLeg = (
+const LEFT_LEG = (
     <div
         style={{
             width: "100px",
@@ -85,31 +85,26 @@ const leftLeg = (
     />
 );
 
-const bodyParts = [head, body, rightArm, leftArm, rightLeg, leftLeg];
+const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG];
 
-interface IDrawingProps {
+type DrawingProps = {
     numberOfGuesses: number;
-}
+};
 
-const Drawing = ({ numberOfGuesses }: IDrawingProps) => {
+export function Drawing({ numberOfGuesses }: DrawingProps) {
     return (
-        <div
-            style={{
-                position: "relative",
-            }}
-        >
-            {bodyParts.slice(0, numberOfGuesses)}
+        <div style={{ position: "relative" }}>
+            {BODY_PARTS.slice(0, numberOfGuesses)}
             <div
                 style={{
                     height: "50px",
                     width: "10px",
                     background: "black",
+                    position: "absolute",
                     top: 0,
                     right: 0,
-                    position: "absolute",
                 }}
             />
-
             <div
                 style={{
                     height: "10px",
@@ -118,21 +113,17 @@ const Drawing = ({ numberOfGuesses }: IDrawingProps) => {
                     marginLeft: "120px",
                 }}
             />
-
             <div
                 style={{
-                    height: "400px",
+                    height: "300px",
                     width: "10px",
                     background: "black",
                     marginLeft: "120px",
                 }}
             />
-
             <div
                 style={{ height: "10px", width: "250px", background: "black" }}
             />
         </div>
     );
-};
-
-export default Drawing;
+}
